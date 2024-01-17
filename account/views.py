@@ -10,7 +10,6 @@ from rest_framework.decorators import permission_classes
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 # for login page
 from rest_framework_simplejwt.views import TokenObtainPairView
-from django.contrib.auth.hashers import get_object_or_404
 from .serializers import (
     UserSerializer,
     UserRegisterTokenSerializer,
@@ -223,7 +222,7 @@ class DeleteUserAddressView(APIView):
             return Response({"details": "Not found."}, status=status.HTTP_404_NOT_FOUND)
 
 # ALL ORDERS LIST
-class OrdersLIstView(APIView):
+class OrdersListView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get(self, request):
