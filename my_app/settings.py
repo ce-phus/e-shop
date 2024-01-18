@@ -13,6 +13,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 from datetime import timedelta
 import os
+import environ
+import requests
+from requests.auth import HTTPBasicAuth
+
+env = environ.Env(DEBUG=(bool, False))
+
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -172,3 +180,8 @@ MEDIA_ROOT= 'static/images'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOW_ALL_ORIGINS= True
+
+access_token_url = env("access_token_url")
+consumer_key = env("consumer_key")
+consumer_secret = env("consumer_secret")
+requests.get(access_token_url,auth=HTTPBasicAuth(consumer_key, consumer_secret))
