@@ -22,5 +22,5 @@ urlpatterns=[
     path('change-order-status/<int:pk>/', views.ChangeOrderStatus.as_view(), name="change-order-status"),
 
     # Mpesa Transactions
-    path('stripe-cards/', views.TransactionListView.as_view(), name="stripe-cards-list-page"),
+    path('mpesa-list/', views.TransactionListView.as_view(), name="mpesa-list-page"),
 ]

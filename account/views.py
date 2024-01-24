@@ -237,7 +237,7 @@ class OrdersListView(APIView):
             serializer = ALLOrderListSerializer(all_orders, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK) 
 
-# change order delivered status
+# change order delivery status
 class ChangeOrderStatus(APIView):
     permission_classes = [permissions.IsAdminUser]
 
