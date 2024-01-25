@@ -29,6 +29,6 @@ class MpesaCallBack(APIView):
         return Response({"status": "OK"}, status=200)
     
     def post(self, request, *args, **kwargs):
-        logging.info("{}".format("Callback fro MPESA"))
+        logging.info("{}".format("Callback from MPESA"))
         data = request.body
         return gateway.callback(json.loads(data))

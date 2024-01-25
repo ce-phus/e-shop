@@ -66,7 +66,7 @@ class MpesaGateway:
                     gateway.access_token_expiration
                     and time.time() > gateway.access_token_expiration
                 ):
-                    token = gateway.getAccesToken()
+                    token = gateway.getAccessToken()
                     gateway.access_token = token
                 return decorated(gateway, *args, **kwargs)
             
