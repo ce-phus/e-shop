@@ -183,6 +183,7 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
 ]
 
+
 access_token_url = env("access_token_url")
 consumer_key = env("consumer_key")
 consumer_secret = env("consumer_secret")

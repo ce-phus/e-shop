@@ -42,7 +42,7 @@ class UserRegisterView(APIView):
                 message= "A user with that email already exists"
                 return Response({"detail": message}, status=status.HTTP_403_FORBIDDEN)
             else:
-                user = User.objects.creat(
+                user = User.objects.create(
                     username=username,
                     email=email,
                     password=make_password(data["password"]),
